@@ -1,3 +1,4 @@
+streamlit
 soundfile
 generativeai
 librosa
@@ -7,3 +8,4 @@ seaborn
 matplotlib
 scipy
 praat-parselmouth
+
