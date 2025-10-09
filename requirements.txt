@@ -6,4 +6,4 @@ pandas
 seaborn 
 matplotlib
 scipy
-parselmouth
+praat-parselmouth
