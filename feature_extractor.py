@@ -1,4 +1,3 @@
-# Colab cell 2: analysis code (paste entire cell)
 import io, os, math, json
 import numpy as np
 import pandas as pd
@@ -9,7 +8,7 @@ import librosa.display
 from scipy import signal
 from IPython.display import Audio, display
 
-# Try import parselmouth (Praat bindings) for jitter/shimmer/HNR; optional
+# Try import parselmouth (Praat bindings) for jitter/shimmer/HNR
 try:
     import parselmouth
     from parselmouth.praat import call as praat_call
@@ -218,4 +217,5 @@ def analyze_bytes_and_show(bytes_audio, sr=16000):
     display(Audio(y, rate=sr))
     print("Metrics summary:")   
     print(json.dumps(metrics, indent=2))
+
     return metrics, outputs, fig
