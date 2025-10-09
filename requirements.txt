@@ -1,0 +1,9 @@
+soundfile
+generativeai
+librosa
+numpy
+pandas
+seaborn 
+matplotlib
+scipy
+parselmouth
