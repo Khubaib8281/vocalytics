@@ -1,3 +1,4 @@
+praat-parselmouth
 streamlit
 soundfile
 google-generativeai
@@ -9,8 +10,3 @@ seaborn
 python-dotenv
 matplotlib
 scipy
-praat-parselmouth
-
-
-
-
