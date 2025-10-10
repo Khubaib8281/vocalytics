@@ -1,11 +1,13 @@
 streamlit
 soundfile
-generativeai
+google-generativeai
 librosa
 numpy
 pandas
 seaborn 
+python-dotenv
 matplotlib
 scipy
 praat-parselmouth
+
 
