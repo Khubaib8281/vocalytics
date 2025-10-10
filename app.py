@@ -16,9 +16,9 @@ api_key = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-2.0-flash")
 
-st.set_page_config(page_title="🎙️ Voice Inspector AI", layout="centered")
+st.set_page_config(page_title="🎙️ Vocalytics", layout="centered")
 
-st.title("🎧 Voice Inspector AI")
+st.title("🎙️ Vocalytics")
 st.markdown("Upload your voice sample to get a full acoustic analysis and AI-generated voice report.")
 
 # --- Upload section ---
@@ -69,6 +69,7 @@ if uploaded_file is not None:
 
 else:
     st.warning("Please upload an audio file to begin.")
+
 
 
 
