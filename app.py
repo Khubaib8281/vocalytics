@@ -1,7 +1,6 @@
 import streamlit as st
 import google.generativeai as genai
-import os
-import sys
+import os, sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))   
 from feature_extractor import analyze_bytes_and_show
 from dotenv import load_dotenv
@@ -46,18 +45,41 @@ if uploaded_file is not None:
 
     # Prepare Gemini prompt
     prompt = f"""
-    You are a professional voice analysis AI.
-    Analyze these extracted acoustic features and provide a human-readable voice report.
-    Focus on tone, energy, clarity, emotional state, and vocal health hints.
+You are a professional voice analyst writing an easy-to-understand and empathetic
+voice report for a non-technical person (like a singer, speaker, or everyday user).
 
-    Metrics:
-    {json.dumps(metrics, indent=2)}
+Below is the extracted acoustic data:
+{metrics} and outputs: {outputs}
 
-    Additional outputs:
-    {outputs}
+Write a report titled: "🎙️ AI Voice Analysis Report"
+    
+Structure the report in this format:
 
-    Be concise but insightful, 3-5 paragraphs.
-    """
+1️⃣ **Overview** – Summarize what kind of voice this appears to be overall
+   (e.g., calm, energetic, tense, soft).
+
+2️⃣ **Tone & Emotion** – Explain the tone score, pitch, and wetness in simple language.
+   Use intuitive emotional terms like “relaxed”, “tired”, “confident”, or “emotional”.
+   Avoid technical jargon. Mention if the voice feels steady or fluctuating.
+
+3️⃣ **Energy & Power** – Talk about loudness and energy values (energy_mean, energy_std, peak_energy)
+   in everyday terms — e.g., “Your voice stays mostly gentle, with occasional bursts of energy.”
+
+4️⃣ **Clarity & Smoothness** – Explain HNR, jitter, and shimmer (if available) without formulas.
+   Say things like “a touch of breathiness” or “slight vocal tension” instead of numerical values.
+    
+5️⃣ **Vocal Health Tips** – Give friendly, practical advice (like hydration, breathing, relaxing the throat).
+   Focus on clarity and warmth, not medical claims.
+
+6️⃣ **Summary Line** – End with a one-line encouraging conclusion,
+   e.g., “You have a warm, natural tone that could sound even more expressive with a bit more energy!”
+
+Guidelines:
+- Use short, clear sentences.
+- Avoid numbers unless needed to support a point.
+- Keep tone supportive, kind, and confidence-boosting.
+"""
+
 
     # Generate report
     with st.spinner("Generating AI report..."):
@@ -69,7 +91,3 @@ if uploaded_file is not None:
 
 else:
     st.warning("Please upload an audio file to begin.")
-
-
-
-
