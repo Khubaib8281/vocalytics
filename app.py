@@ -45,35 +45,58 @@ if uploaded_file is not None:
 
     # Prepare Gemini prompt
     prompt = f"""
-You are a friendly professional voice coach. Your job is to take the following
-acoustic features and describe what they mean in **simple, natural human language**,
-so that even a beginner with no technical knowledge can understand.
+You are a **professional voice health analyst and speech specialist**. 
+Your role is to interpret the following **acoustic features** to create a 
+professional, yet easy-to-understand **Voice Health Report** that can help 
+the person understand their **vocal condition**, possible **strain or fatigue**, 
+and overall **vocal well-being**.
 
 Here are the analyzed voice features:
 {metrics}, output: {outputs}
 
-Write a short, easy-to-read voice report titled:
-🎙️ "Voice Analysis Report"
+Write a clear, human-readable report titled:
+🧾 "Voice Health & Quality Report"
 
-Follow this style guide:
-- Use plain, everyday language.
-- Avoid any technical or scientific terms (like Hz, dB, centroid, spectral, etc.)
-- Instead, explain what the data means in how the voice **feels** or **sounds**.
-- Be warm, conversational, and encouraging, but be clear and say the truth.
-- If some features like jitter or shimmer are missing, just say “Some tiny voice stability details weren’t available.”
-- Use bullet points or short paragraphs so it’s easy to read.
-- End with a kind motivational line about the person’s voice.
+🧠 **Tone & Style Guidelines:**
+- Use **plain language** anyone can understand.
+- Keep a **calm, professional, and empathetic tone** (like a speech pathologist explaining results).
+- Avoid raw numbers or units (Hz, dB, etc.), but interpret what they mean — e.g., “your voice sounds slightly breathy or strained”.
+- Mention **possible throat health signs** like tension, dryness, breathiness, fatigue, or imbalance.
+- If jitter or shimmer are missing, say: “Some fine voice stability measures weren’t available, so this report may be partially limited.”
+- Keep the structure well-organized and professional.
+- Use short paragraphs or bullet points for clarity.
 
-Structure:
-1️⃣ **Overall Impression:** Talk about how the voice generally feels (calm, energetic, confident, soft, etc.)
-2️⃣ **Tone & Emotion:** Describe the emotional impression — cheerful, steady, gentle, serious, or expressive.
-3️⃣ **Clarity & Smoothness:** Explain if the voice sounds clear, breathy, or slightly tense.
-4️⃣ **Energy & Flow:** Mention if the voice feels steady, varies naturally, or gets louder/softer.
-5️⃣ **Helpful Tips:** Give 2–3 simple, supportive tips for improving or maintaining a healthy tone.
-6️⃣ **Positive Summary:** End with one uplifting compliment.
+📋 **Report Structure:**
 
-Keep it under 200 words, sound **human, kind, and natural** — as if you’re talking directly to the speaker.
+1️⃣ **Overall Voice Summary:**  
+Describe how the voice generally sounds — calm, tense, steady, tired, or expressive. Mention clarity, steadiness, and vocal balance.
+
+2️⃣ **Vocal Health Insights:**  
+Explain if there are signs of throat strain, breathiness, roughness, fatigue, or dryness.  
+Use cues from jitter, shimmer, and HNR to assess vocal stability and health.
+
+3️⃣ **Tone & Expression:**  
+Discuss emotional impression — confident, tired, neutral, expressive, etc.  
+If wetness or tone scores indicate emotional states (sad, energetic, relaxed), explain that in plain words.
+
+4️⃣ **Potential Concerns or Red Flags:**  
+Gently mention if the data shows signs that may suggest vocal tension, overuse, or possible early vocal fatigue — always phrased supportively, not alarmingly.
+
+5️⃣ **Voice Care Recommendations:**  
+Offer 2–3 practical suggestions to maintain or improve vocal health.  
+For example: hydration, warm-ups, posture, rest, or reducing vocal strain.
+
+6️⃣ **Positive Reinforcement:**  
+End with a supportive line recognizing the person’s unique voice and encouraging them to take care of it.
+
+🩺 **Output Goal:**  
+Create a report that feels professional enough for a health or research setting, 
+yet gentle and clear enough for non-technical users. 
+Avoid overly technical or emotional exaggeration — balance expertise with empathy.
+
+Keep it under 250 words.
 """
+
 
 
 
@@ -87,6 +110,7 @@ Keep it under 200 words, sound **human, kind, and natural** — as if you’re t
 
 else:
     st.warning("Please upload an audio file to begin.")
+
 
 
 
