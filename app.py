@@ -45,40 +45,36 @@ if uploaded_file is not None:
 
     # Prepare Gemini prompt
     prompt = f"""
-You are a professional voice analyst writing an easy-to-understand and empathetic
-voice report for a non-technical person (like a singer, speaker, or everyday user).
+You are a friendly professional voice coach. Your job is to take the following
+acoustic features and describe what they mean in **simple, natural human language**,
+so that even a beginner with no technical knowledge can understand.
 
-Below is the extracted acoustic data:
-{metrics} and outputs: {outputs}
+Here are the analyzed voice features:
+{metrics}, output: {outputs}
 
-Write a report titled: "🎙️ AI Voice Analysis Report"
-    
-Structure the report in this format:
+Write a short, easy-to-read voice report titled:
+🎙️ "Voice Analysis Report"
 
-1️⃣ **Overview** – Summarize what kind of voice this appears to be overall
-   (e.g., calm, energetic, tense, soft).
+Follow this style guide:
+- Use plain, everyday language.
+- Avoid any technical or scientific terms (like Hz, dB, centroid, spectral, etc.)
+- Instead, explain what the data means in how the voice **feels** or **sounds**.
+- Be warm, conversational, and encouraging.
+- If some features like jitter or shimmer are missing, just say “Some tiny voice stability details weren’t available.”
+- Use bullet points or short paragraphs so it’s easy to read.
+- End with a kind motivational line about the person’s voice.
 
-2️⃣ **Tone & Emotion** – Explain the tone score, pitch, and wetness in simple language.
-   Use intuitive emotional terms like “relaxed”, “tired”, “confident”, or “emotional”.
-   Avoid technical jargon. Mention if the voice feels steady or fluctuating.
+Structure:
+1️⃣ **Overall Impression:** Talk about how the voice generally feels (calm, energetic, confident, soft, etc.)
+2️⃣ **Tone & Emotion:** Describe the emotional impression — cheerful, steady, gentle, serious, or expressive.
+3️⃣ **Clarity & Smoothness:** Explain if the voice sounds clear, breathy, or slightly tense.
+4️⃣ **Energy & Flow:** Mention if the voice feels steady, varies naturally, or gets louder/softer.
+5️⃣ **Helpful Tips:** Give 2–3 simple, supportive tips for improving or maintaining a healthy tone.
+6️⃣ **Positive Summary:** End with one uplifting compliment.
 
-3️⃣ **Energy & Power** – Talk about loudness and energy values (energy_mean, energy_std, peak_energy)
-   in everyday terms — e.g., “Your voice stays mostly gentle, with occasional bursts of energy.”
-
-4️⃣ **Clarity & Smoothness** – Explain HNR, jitter, and shimmer (if available) without formulas.
-   Say things like “a touch of breathiness” or “slight vocal tension” instead of numerical values.
-    
-5️⃣ **Vocal Health Tips** – Give friendly, practical advice (like hydration, breathing, relaxing the throat).
-   Focus on clarity and warmth, not medical claims.
-
-6️⃣ **Summary Line** – End with a one-line encouraging conclusion,
-   e.g., “You have a warm, natural tone that could sound even more expressive with a bit more energy!”
-
-Guidelines:
-- Use short, clear sentences.
-- Avoid numbers unless needed to support a point.
-- Keep tone supportive, kind, and confidence-boosting.
+Keep it under 200 words, sound **human, kind, and natural** — as if you’re talking directly to the speaker.
 """
+
 
 
     # Generate report
@@ -91,3 +87,4 @@ Guidelines:
 
 else:
     st.warning("Please upload an audio file to begin.")
+
