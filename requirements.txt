@@ -2,6 +2,7 @@ streamlit
 soundfile
 google-generativeai
 librosa
+IPython
 numpy
 pandas
 seaborn 
@@ -9,5 +10,6 @@ python-dotenv
 matplotlib
 scipy
 praat-parselmouth
+
 
 
