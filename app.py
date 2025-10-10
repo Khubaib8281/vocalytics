@@ -59,7 +59,7 @@ Follow this style guide:
 - Use plain, everyday language.
 - Avoid any technical or scientific terms (like Hz, dB, centroid, spectral, etc.)
 - Instead, explain what the data means in how the voice **feels** or **sounds**.
-- Be warm, conversational, and encouraging.
+- Be warm, conversational, and encouraging, but be clear and say the truth.
 - If some features like jitter or shimmer are missing, just say “Some tiny voice stability details weren’t available.”
 - Use bullet points or short paragraphs so it’s easy to read.
 - End with a kind motivational line about the person’s voice.
@@ -87,5 +87,6 @@ Keep it under 200 words, sound **human, kind, and natural** — as if you’re t
 
 else:
     st.warning("Please upload an audio file to begin.")
+
 
 
