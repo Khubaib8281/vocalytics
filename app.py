@@ -15,10 +15,50 @@ api_key = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-2.0-flash")
 
-st.set_page_config(page_title="🎙️ Vocalytics", layout="centered")
+st.set_page_config(page_title="🎙️ SpeakSense", layout="centered")
 
-st.title("🎙️ Vocalytics")
-st.markdown("Upload your voice sample to get a full acoustic analysis and AI-generated voice report.")
+def add_footer():
+    st.markdown(
+        """
+        <style>
+        /* --- Footer Styling --- */
+        footer {
+            visibility: hidden;
+        }
+        .footer-container {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #0E1117;
+            color: #FAFAFA;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            border-top: 1px solid #262730;
+            font-family: 'Inter', sans-serif;
+        }
+        .footer-container a {
+            color: #57A6FF;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer-container a:hover {
+            text-decoration: underline;
+        }
+        </style>
+
+        <div class="footer-container">
+            🧠 <b>SpeakSense</b> • Built for vocal diagnostics and acoustic insight<br>
+            Developed by <a href="https://www.linkedin.com/in/muhammad-khubaib-ahmad-" target="_blank">Muhammad Khubaib Ahmad</a> © 2025
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+st.title("🎙️ SpeakSense")
+st.markdown("Your personal vocal health scanner — identify signs of strain, instability, or breathiness before they affect your voice.")
 
 # --- Upload section ---
 uploaded_file = st.file_uploader(
@@ -111,6 +151,7 @@ Keep it under 250 words.
 else:
     st.warning("Please upload an audio file to begin.")
 
+add_footer()
 
 
 
