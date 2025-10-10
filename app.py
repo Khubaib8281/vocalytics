@@ -63,7 +63,7 @@ st.markdown("Your personal vocal health scanner — identify signs of strain, in
 # --- Upload section ---
 uploaded_file = st.file_uploader(
     "Upload an audio file (WAV, OPUS)",
-    type=["wav", "mp3", "ogg", "opus"],
+    type=["wav", "opus"],
 )    
 
 if uploaded_file is not None:
@@ -152,6 +152,7 @@ else:
     st.warning("Please upload an audio file to begin.")
 
 add_footer()
+
 
 
 
