@@ -40,8 +40,8 @@ if uploaded_file is not None:
     st.subheader("📊 Acoustic Visualization")
     st.pyplot(fig)
 
-    st.subheader("📈 Metrics Summary")
-    st.json(metrics)
+    # st.subheader("📈 Metrics Summary")
+    # st.json(metrics)
 
     # Prepare Gemini prompt
     prompt = f"""
@@ -87,4 +87,5 @@ Keep it under 200 words, sound **human, kind, and natural** — as if you’re t
 
 else:
     st.warning("Please upload an audio file to begin.")
+
 
