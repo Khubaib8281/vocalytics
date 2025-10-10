@@ -1,8 +1,10 @@
 import streamlit as st
 import google.generativeai as genai
+import os, sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))   
 from feature_extractor import analyze_bytes_and_show
 from dotenv import load_dotenv
-import json, os
+import json
 from io import BytesIO
 
 # Load environment variables
@@ -66,3 +68,4 @@ if uploaded_file is not None:
 
 else:
     st.warning("Please upload an audio file to begin.")
+
