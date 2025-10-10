@@ -15,6 +15,7 @@ try:
     HAS_PRAAT = True
 except Exception:
     HAS_PRAAT = False
+    st.warning("Detailed vocal stability analysis (jitter, shimmer, HNR) is not available in this version.")
 
 def load_audio(path_or_bytes, sr=16000):
     """Load audio and resample to sr. Accept path or raw bytes-like object."""
@@ -219,3 +220,4 @@ def analyze_bytes_and_show(bytes_audio, sr=16000):
     print(json.dumps(metrics, indent=2))
 
     return metrics, outputs, fig
+
