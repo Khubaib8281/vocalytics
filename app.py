@@ -77,8 +77,21 @@ if uploaded_file is not None:
     metrics, outputs, fig = analyze_bytes_and_show(audio_bytes)
 
     # Show metrics & plots
+    
     st.subheader("📊 Acoustic Visualization")
     st.pyplot(fig)
+    
+    buf = io.BytesIO()
+    fig.savefig(buf, format="png", dpi=300, bbox_inches="tight")
+    buf.seek(0)
+    
+    st.download_button(
+        label="📥 Download Plot",
+        data=buf,
+        file_name="voice_analysis_plot.png",
+        mime="image/png"
+    )
+
 
     # st.subheader("📈 Metrics Summary")
     # st.json(metrics)
@@ -152,6 +165,7 @@ else:
     st.warning("Please upload an audio file to begin.")
 
 add_footer()
+
 
 
 
