@@ -5,6 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from feature_extractor import analyze_bytes_and_show
 from dotenv import load_dotenv
 import json
+import io
 from io import BytesIO
 
 # Load environment variables
@@ -165,6 +166,7 @@ else:
     st.warning("Please upload an audio file to begin.")
 
 add_footer()
+
 
 
 
