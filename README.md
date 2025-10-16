@@ -57,7 +57,7 @@ sensitivity or emotional depth.
 **4️⃣ Potential Concerns**\
 Moderate strain detected --- monitor vocal effort and hydration.
 
-**5️⃣ Voice Care Recommendations** - Stay hydrated 💧\
+**5️⃣ Voice Care Recommendations** - Stay hydrated 💧
 - Do light vocal warm-ups 🎵
 - Maintain good posture 🧍‍♂️
 
