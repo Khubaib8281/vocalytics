@@ -16,7 +16,7 @@ api_key = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-2.0-flash")
 
-st.set_page_config(page_title="🎙️ SpeakSense", layout="centered")
+st.set_page_config(page_title="🎙️ SpeachSense", layout="centered")
 
 def add_footer():
     st.markdown(
@@ -58,7 +58,7 @@ def add_footer():
     )
 
 
-st.title("🎙️ SpeakSense")
+st.title("🎙️ SpeachSense")
 st.markdown("Your personal vocal health scanner — identify signs of strain, instability, or breathiness before they affect your voice.")
 
 # --- Upload section ---
@@ -166,6 +166,7 @@ else:
     st.warning("Please upload an audio file to begin.")
 
 add_footer()
+
 
 
 
