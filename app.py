@@ -50,7 +50,7 @@ def add_footer():
         </style>
 
         <div class="footer-container">
-            🎙️ <b>SpeakSense</b> • Built for vocal diagnostics and acoustic insight<br>
+            🎙️ <b>SpeachSense</b> • Built for vocal diagnostics and acoustic insight<br>
             Developed by <a href="https://www.linkedin.com/in/muhammad-khubaib-ahmad-" target="_blank">Muhammad Khubaib Ahmad</a> © 2025
         </div>
         """,
@@ -166,6 +166,7 @@ else:
     st.warning("Please upload an audio file to begin.")
 
 add_footer()
+
 
 
 
